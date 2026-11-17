@@ -244,10 +244,10 @@ dialog.account[data-view="delete"] .drawer > [data-view="delete"] { display: gri
 .drawer .or { text-align: center; font-size: 14px; color: var(--dim); }
 .drawer-user { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .drawer-user p { min-width: 0; }
-.drawer-user .btn { flex: none; height: 40px; padding: 0 16px; font-size: 15px; }
+.drawer-user .btn { flex: none; height: 44px; padding: 0 16px; font-size: 15px; }
 .drawer-foot { margin-top: auto; padding-top: 18px; display: flex; justify-content: space-between; align-items: center; }
 /* Privacy and Delete account: tertiary, lime words. */
-.drawer-link { padding: 10px 0; font-size: 15px; font-weight: 600; color: var(--neon); text-decoration: none; text-underline-offset: .2em; }
+.drawer-link { min-height: 44px; display: inline-flex; align-items: center; padding: 10px 0; font-size: 15px; font-weight: 600; color: var(--neon); text-decoration: none; text-underline-offset: .2em; }
 .drawer-link:hover { text-decoration: underline; }
 dialog.account:not([data-view="account"]) #delete-account { display: none; }
 .account-close { position: absolute; z-index: 1; top: calc(14px + env(safe-area-inset-top)); right: 12px; }
@@ -261,15 +261,20 @@ dialog.account:not([data-view="account"]) #delete-account { display: none; }
 .conn-logo { width: 32px; height: 32px; display: block; align-self: start; margin-top: 2px; }
 .conn-text { min-width: 0; }
 .conn-name { font-size: 16px; font-weight: 600; color: var(--text); }
+.conn-note { margin: 0; font-size: 14px; line-height: 1.35; color: var(--dim); }
 .drawer .conn-note { font-size: 14px; line-height: 1.35; }
-.drawer .conn-note.on { color: var(--lime-ink); }
+.conn-note.on, .drawer .conn-note.on { color: var(--lime-ink); }
 .conn-note.on::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 6px; border-radius: 50%; background: var(--neon); vertical-align: 1px; }
 .conn > .btn { grid-column: 1 / -1; width: 100%; }
 .conn > .btn[hidden] { display: none; }
 .conn > .btn-tertiary { justify-self: start; width: auto; margin-left: -10px; padding: 0 10px; }
 .conn > .btn[aria-busy="true"] { pointer-events: none; cursor: progress; }
+.conn-msg { margin: 0; font-size: 15px; line-height: 1.45; color: #ffd3e4; }
 .drawer .conn-msg { color: #ffd3e4; }
-.drawer .conn-msg:empty { display: none; }
+.conn-msg:empty { display: none; }
+/* Export dialog (export.js): the buttons hide and show as the state changes. */
+#export-dialog .btn[hidden] { display: none; }
+#export-dialog .btn[aria-busy="true"] { pointer-events: none; cursor: progress; }
 #account-error { color: #ffd3e4; }
 #account-error:not(:empty) { margin-top: 12px; }
 
